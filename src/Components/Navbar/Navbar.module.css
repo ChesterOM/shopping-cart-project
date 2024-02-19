@@ -3,7 +3,7 @@
     justify-content: end;
     align-items: center;
     width: 100vw;
-    height: 60px;
+    min-height: 60px;
     background-color: #2C3E50; 
     padding: 0px 20px;
 }
