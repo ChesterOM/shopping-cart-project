@@ -1,0 +1,20 @@
+.navBar {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    width: 100vw;
+    height: 60px;
+    background-color: #2C3E50; 
+    padding: 0px 20px;
+}
+
+.link {
+    text-decoration: none;
+    color: #ECF0F1; 
+    margin: 0 20px 0 10px;
+    transition: color 0.3s ease; 
+}
+
+.link:hover {
+    color: #F39C12; 
+}
