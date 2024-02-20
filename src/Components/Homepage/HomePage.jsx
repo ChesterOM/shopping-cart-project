@@ -1,28 +1,24 @@
-import { useEffect, useState } from "react";
 import NavBar from "../Navbar/Navbar.jsx";
 import ProductCard from "../ProductCard/ProductCard.jsx";
 import styles from "./HomePage.module.css"
+import PropTypes from "prop-types"
 
-const HomePage = () => {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        fetch(`https://fakestoreapi.com/products`)
-            .then(response => response.json())
-            .then(data => setProducts(data))
-            .catch(error => console.error("Failed to fetch products", error));
-    }, [])
-    
-    
+const HomePage = ({ products, addToCart}) => {
     return (
         <div className={styles.homePage}>
             <NavBar />
-            <h1>HOMEPAGE</h1>
-            {products.map(product => (
-                <ProductCard key={product.id} product={product} />
-            ))}
+            <div className={styles.productsContainer}>
+                {products.map(product => (
+                    <ProductCard key={product.id} product={product} onAddToCart={() => addToCart(product)}/>
+                ))}
+            </div>
         </div>
     )
 };
+
+HomePage.propTypes = {
+    products: PropTypes.array.isRequired,
+    addToCart: PropTypes.func.isRequired,
+}
 
 export default HomePage

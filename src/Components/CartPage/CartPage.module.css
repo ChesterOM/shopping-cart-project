@@ -1,5 +1,48 @@
 .cartPage {
     display: flex;
     flex-direction: column;
+    max-width: 800px;
     height: 100vh;
-}
+  }
+  
+  .cartItem {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 3fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  
+  .cartItemImage {
+    width: 80px; 
+    height: auto;
+  }
+  
+  .itemTitle {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+  
+  .itemPrice, .itemSubtotal {
+    text-align: right;
+  }
+  
+  .itemQuantity {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .quantityInput {
+    border: 1px solid #e1e1e1;
+    padding: 0.5rem;
+    width: 50px;
+    text-align: center;
+  }
+  
+  .removeItemButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
